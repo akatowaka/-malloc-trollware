@@ -37,3 +37,9 @@ There are two main separated categories: Preservation and Payload. Preservation 
   - Randomises window & text colours, as well as highlighting text colours. Doesn't affect all applications.
   - Slowly makes the mouse cursor bigger.
 
+# Reflection
+This project was a bit of a pain to do as much of what I attempted to accomplish had to come with a lot of internet deep diving. The bulk of the time I spent on this project was probably in researching exactly what actions and features were possible, as I wanted to strictly stick to things that did not require administrative permissions. There was also plenty of self testing, particularly with the editing of registry keys. Surprisingly there wasn't a lot of detailed documentation on what each of the keys represented in the system, so I needed to manually change them myself to see how they impacted my machine. 
+
+Overall this project was a lot of fun though, and whilst I do wish I had the time to add more complex features I'm still quite happy with how this came out. The final trollware feels a bit more like a dump of random gimmicks found scattered across Stackoverflow I frankensteined together into this mess of an executable, but in a way I think that gave me more option for what to do instead of sticking to one specific theme. 
+
+My main rationale for writing a piece of trollware was I wanted to attempt to influence things outside the 'contraints' of the program. Most programs I've written in the past are mostly or wholly self contained, only changing files strictly tied to the script itself. This time though I wanted to attack things that were essentually completely unrelated, such as registry keys and the recycling bin. It's nothing particularly spectacular, but I'm happy I accomplished this goal.

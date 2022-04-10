@@ -1,0 +1,2 @@
+LANGUAGES = ['ar-SA', 'eu-ES', 'bg-BG', 'ca-ES', 'zh-TW', 'zh-CN', 'hr-HR', 'cs-CZ', 'da-DK', 'nl-NL', 'en-US', 'en-GB', 'et-EE', 'fi-FI', 'fr-CA', 'fr-FR', 'gl-ES', 'de-DE', 'el-GR', 'he-IL', 'hu-HU', 'id-ID', 'it-IT', 'ja-JP', 'ko-KR', 'lv-LV', 'lt-LT', 'nb-NO', 'pl-PL', 'pt-BR', 'pt-PT', 'ro-RO', 'ru-RU', 'sr-Latn-RS', 'sk-SK', 'sl-SL', 'es-MX', 'es-ES', 'sv-SE', 'th-TH', 'tr-TR', 'uk-UA', 'vi-VN']
+NAME = 'malloc'

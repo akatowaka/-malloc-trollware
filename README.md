@@ -10,12 +10,13 @@ Named 'malloc' due to various CS related puns around my name (Mal-achi).
 
 # Features
 
-There are two main separated categories: Preservation and Payload. Preservation largely attempts to make the executable longer-lived, and survive attempts nby the average user to remove or disable it. Payload is the actual affect the executable has on the machine.
+There are two main separated categories: Preservation and Payload. Preservation largely attempts to make the executable longer-lived, and survive attempts by the average user to remove or disable it. Payload is the actual affect the executable has on the machine.
 
 ## Preservation
 - Hides command line whilst executable is running.
 - Clones executable to current user's folder in the C disk.
 - Creates a shortcut to the cloned executable in shell:startup, letting it automatically run every time the computer is opened.
+- Hides executable and shortcut in files.
 
 ## Payload
 - Every 5 seconds, empties the recycling bin.

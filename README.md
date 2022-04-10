@@ -8,6 +8,10 @@ Named 'malloc' due to various CS related puns around my name (Mal-achi).
 |:--:| 
 | *What an anxiety attack sounds like.* |
 
+# Overview
+
+‘malloc’ is a trollware designed to mess with the victim in a variety of ways. It’s mostly based on modern internet meme culture and does little to actively harm the user, though it does feature some very basic self perpetuation tactics to ensure the average person cannot get rid of it easily. The average COMP6841 student however would probably be able to easily remove the program and undo any of the changes it had caused.
+
 # Features
 
 There are two main separated categories: Preservation and Payload. Preservation largely attempts to make the executable longer-lived, and survive attempts by the average user to remove or disable it. Payload is the actual affect the executable has on the machine.
@@ -39,8 +43,37 @@ There are two main separated categories: Preservation and Payload. Preservation 
   - Slowly makes the mouse cursor bigger.
 
 # Reflection
+My main rationale for writing a piece of trollware was I wanted to attempt to influence things outside the 'contraints' of the program. Most programs I've written in the past are mostly or wholly self contained, only changing files strictly tied to the script itself. This time though I wanted to attack things that were essentually completely unrelated, such as registry keys and the recycling bin. I figured this would be a bit more challenging as its something I've never done and have frankly been quite scared of attempting. Whilst my final result isn't nothing particularly spectacular, I'm still happy I accomplished this goal.
+
+As someone coming from a background of never having messed with Windows itself through a script, this project resulted in many, many hours of research and reading of documentation to get a grasp on what I needed to do. Python luckily has an extensive list of libraries, many of which make operating system manipulation much easier to digest and accomplish.
+
+I realised that I limited myself a bit by choosing Python, a language I've been using for many years and understand fairly well. I believe this project may have been far more challenging if I attempted it in say, Javascript or even C. Next time I would definitely stretch myself more by choosing an unfamiliar or new language I've never used before.
+
+## Security Insights
+Writing the trollware has made me realise how many things are available for a script to attack. I had never needed to use elevated permissions or ask for administrator rights whilst writing my program, and I was still able to create some degree of self perpetuity. Granted, Windows Defender did attempt to block running the file, but I take this as more of a success since it's apparently 'malicious' enough to cause an antivirus to pick up on it.
+
+Possibly the most concerning thing I've noted is just how much can be done through Powershell. Where there wasn't a defined library for a certain feature I wanted to attempt, I simply had to run Powershell as a subprocess to execute commands to the same effect. This included modifying registry keys - whilst the most important keys (namely `HKEY_LOCAL_MACHINE`) are locked behind administrative authorization (thankfully), the fact that I was able to change any at all paves the way for legitimate malicious attacks that delete them altogether from the system.
+
+## Final Thoughts
 This project was a bit of a pain to do as much of what I attempted to accomplish had to come with a lot of internet deep diving. The bulk of the time I spent on this project was probably in researching exactly what actions and features were possible, as I wanted to strictly stick to things that did not require administrative permissions. There was also plenty of self testing, particularly with the editing of registry keys. Surprisingly there wasn't a lot of detailed documentation on what each of the keys represented in the system, so I needed to manually change them myself to see how they impacted my machine. 
 
 Overall this project was a lot of fun though, and whilst I do wish I had the time to add more complex features I'm still quite happy with how this came out. The final trollware feels a bit more like a dump of random gimmicks found scattered across Stackoverflow I frankensteined together into this mess of an executable, but in a way I think that gave me more option for what to do instead of sticking to one specific theme. 
 
-My main rationale for writing a piece of trollware was I wanted to attempt to influence things outside the 'contraints' of the program. Most programs I've written in the past are mostly or wholly self contained, only changing files strictly tied to the script itself. This time though I wanted to attack things that were essentually completely unrelated, such as registry keys and the recycling bin. It's nothing particularly spectacular, but I'm happy I accomplished this goal.
+# Appendix
+Thanks to the members of UNSW Boardgames and RPG Society for all of these cursed feature ideas.
+
+Libraries used:
+- [schedule](https://schedule.readthedocs.io/en/stable/)
+- time
+- [winshell](https://winshell.readthedocs.io/en/latest/)
+- [os](https://docs.python.org/3/library/os.html) 
+- [sys](https://docs.python.org/3/library/sys.html)
+- win32com.client, win32gui, win32con
+- [ctypes](https://docs.python.org/3/library/ctypes.html)
+- [requests](https://docs.python-requests.org/en/latest/)
+- [threading](https://docs.python.org/3/library/threading.html)
+- [psutil](https://psutil.readthedocs.io/en/latest/)
+- [shutil](https://docs.python.org/3/library/shutil.html)
+- [subprocess](https://docs.python.org/3/library/subprocess.html)
+- random
+- [playsound](https://pypi.org/project/playsound/)

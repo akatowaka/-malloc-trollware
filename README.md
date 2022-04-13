@@ -77,3 +77,12 @@ Libraries used:
 - [subprocess](https://docs.python.org/3/library/subprocess.html)
 - random
 - [playsound](https://pypi.org/project/playsound/)
+
+### Sources
+- [python save image from url](https://stackoverflow.com/questions/30229231/python-save-image-from-url) (used in `changeBackground()`)
+- [How to change language/region and speech in Windows 10 with Powershell script](https://stackoverflow.com/questions/51183960/how-to-change-language-region-and-speech-in-windows-10-with-powershell-script) (used in `languages()`)
+- [How to open external programs in Python](https://stackoverflow.com/questions/37238645/how-to-open-external-programs-in-python) (used in `payload.py` and `powershellpayload.py`)
+- [Check if a process is running or not on Windows?](https://stackoverflow.com/questions/7787120/check-if-a-process-is-running-or-not-on-windows) (used in `edgeForcer()` and `killTask()`)
+- [changing desktop background in windows 10 via python](https://stackoverflow.com/questions/40941167/changing-desktop-background-in-windows-10-via-python) (used in `changeBackground()`)
+- [How can I make a file hidden on Windows?](https://stackoverflow.com/questions/43441883/how-can-i-make-a-file-hidden-on-windows) (used in `cloneExe()` and `addStartup()`)
+- [Registry keys to change personalization settings?](https://superuser.com/questions/1245923/registry-keys-to-change-personalization-settings) (referenced for `powershellpayload.py`)
